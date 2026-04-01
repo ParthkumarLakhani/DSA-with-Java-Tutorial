@@ -10,11 +10,13 @@ public class DsaApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(DsaApplication.class, args);
 
-//		int[] ary = {10,5,45,2,8,2,45,65,878,213};
-		int[] ary = {};
-		int target = 11;
+		int[] ary = {10,45,4,8,8,4,12,20,56,89,78,100};
+		char target = 100;
 
-		boolean indexAt = LinearSearch.linearSearch(ary,target);
+		int startIndex = 4;
+		int endIndex = 6;
+
+		boolean indexAt = LinearSearch.linearSearchRange(ary,target, startIndex, endIndex);
 		System.out.println("Have you Found the Val: "+indexAt);
 	}
 
