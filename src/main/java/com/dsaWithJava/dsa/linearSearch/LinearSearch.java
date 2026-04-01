@@ -66,4 +66,27 @@ public class LinearSearch {
     }
 
 
+    //search in 2d array
+    public static boolean linearSearch2DAry(int[][] ary, int target){
+        int length = ary.length;
+
+        if(length == 0){
+            return false;
+        }
+
+        for(int index = 0; index < length; index++){
+            int newLen = ary[index].length;
+            for (int key = 0; key < newLen; key++) {
+                if (ary[index][key] == target){
+                    System.out.println("outer index: "+index);
+                    System.out.println("inner index: "+key);
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
+
 }
