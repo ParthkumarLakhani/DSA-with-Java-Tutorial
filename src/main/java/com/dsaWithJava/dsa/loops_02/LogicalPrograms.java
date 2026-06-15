@@ -82,6 +82,14 @@ public class LogicalPrograms {
         return num;
     }
 
+    public boolean isNumArmStrong(int num){
+        // 153 -> cub of every digit in addition.
+        // 1^3 + 5^3 + 3^3 = 153
+
+        boolean isArmStrong = false;
+
+        return isArmStrong;
+    }
 
 
 }
