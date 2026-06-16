@@ -36,6 +36,23 @@ public class LogicalPrograms {
         // two possible question on fibonacci
         // what is 5th element.
         // list of element inside number.
+        // 0 1 1 2 3 5 8 13 21,...
+
+
+        int firstPointer = 0;
+        int secondPointer = 1;
+
+        int nextPointer = 0;
+
+        for (int i = 2; i <= num ; i++) {
+            nextPointer = firstPointer + secondPointer;
+            firstPointer = secondPointer;
+            secondPointer = nextPointer;
+        }
+        System.out.println(nextPointer);
+
+
+
 
         ArrayList<Integer> list = new ArrayList<>();
 
@@ -68,12 +85,15 @@ public class LogicalPrograms {
 
     public int reverseNum(int num){
 
-        //2455 => 5542
+        int reverseNum = 0;
 
+        while (0 < num){
+            int reminder = num % 10 ;
+            num = num / 10 ;
+            reverseNum = reverseNum * 10 +  reminder;
+        }
 
-
-
-        return num;
+        return reverseNum;
     }
 
     public int calculatorProgram(int num){
