@@ -88,5 +88,13 @@ public class LinearSearch {
         return false;
     }
 
+    /* Time Complexity
+
+    Basic Amount of time taken to perform operation.
+
+    Time Complexity is a measure of how the execution time of an algorithm grows as the input size (n) increases.
+
+    How The time grows as your input grows.
+    */
 
 }
