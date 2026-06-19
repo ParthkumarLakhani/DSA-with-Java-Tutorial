@@ -12,7 +12,7 @@ public class DsaApplication {
 
 		BinarySearch l1 = new BinarySearch();
 
-		System.out.println(l1.searchItem());
+		System.out.println(l1.searchItemInOrderAgonist());
 	}
 
 }

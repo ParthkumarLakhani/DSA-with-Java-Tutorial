@@ -157,7 +157,8 @@ public class BinarySearch {
 
         while (firstPosition <= lastPosition){
 
-            int middle = (firstPosition + lastPosition) / 2 ;
+            int middle = (firstPosition + lastPosition) / 2 ;  // here might be possible that ( f + l ) is exceeds the range of int in java.
+//            int middle = firstPosition + ( lastPosition - firstPosition ) / 2 ;
 
             if(ary[middle] == taget){
                 return middle;
@@ -170,6 +171,111 @@ public class BinarySearch {
                 lastPosition = middle - 1;
             }
         }
+
+        return -1;
+    }
+
+    // order agonist binary search asc/desc
+    public int searchItemInOrderAgonist(){
+
+        // means ary can be asc / desc
+
+//        int[] ary = { -2, -1, 0, 1, 3, 44, 55, 66, 88, 99, 100, 110, 101, 990, 1000 };
+        int[] ary = {1000, 990, 110, 101, 100, 99, 88, 66, 55, 44, 3, 1, 0, -1, -2};
+
+        int target = -3;
+
+        int len = ary.length;
+
+        if (len == 0){
+            return -1;
+        }
+        if(len == 1 && ary[0] == target){
+            return 0;
+        }
+
+
+        boolean isAsc = false;
+        int firstPosition = 0;
+        int lastPosition = len - 1;
+
+        if( ary[firstPosition] <= ary[lastPosition] ){
+            isAsc = true;
+        }
+
+//        if(isAsc){
+//            while( firstPosition <= lastPosition ){
+//                int middle = firstPosition + ( lastPosition - firstPosition) / 2;
+//
+//                if (ary[middle] == target){
+//                    return middle;
+//                }
+//
+//                if(target > ary[middle]){
+//                    firstPosition = middle + 1;
+//                }
+//                if(ary[middle] > target){
+//                    lastPosition = middle - 1;
+//                }
+//            }
+//        }
+//        else {
+//            while( firstPosition <= lastPosition ){
+//                int middle = firstPosition + ( lastPosition - firstPosition) / 2;
+//
+//                if (ary[middle] == target){
+//                    return middle;
+//                }
+//                if(target > ary[middle]){
+//                    lastPosition = middle - 1;
+//                }
+//                if(ary[middle] > target){
+//                    firstPosition = middle + 1;
+//                }
+//            }
+//        }
+
+
+        //optimised
+        while( firstPosition <= lastPosition ){
+            int middle = firstPosition + ( lastPosition - firstPosition) / 2;
+
+            if (ary[middle] == target){
+                return middle;
+            }
+
+//            if(isAsc){
+//                if(target > ary[middle]){
+//                    firstPosition = middle + 1;
+//                }
+//                if(ary[middle] > target){
+//                    lastPosition = middle - 1;
+//                }
+//            }else {
+//                if(target > ary[middle]){
+//                    lastPosition = middle - 1;
+//                }
+//                if(ary[middle] > target){
+//                    firstPosition = middle + 1;
+//                }
+//            }
+
+            if ( target > ary[middle] ){
+                if (isAsc){
+                    firstPosition = middle + 1;
+                }
+                lastPosition = middle - 1;
+            }
+            if ( ary[middle] > target ){
+                if (isAsc){
+                    lastPosition = middle - 1;
+                }
+                firstPosition = middle + 1;
+            }
+
+        }
+
+
 
         return -1;
     }
