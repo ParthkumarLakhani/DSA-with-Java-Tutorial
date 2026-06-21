@@ -117,7 +117,7 @@ public class BinaryProblems {
 
         return ary[firstPointer % len] ;
     }
-
+ 
     //leet code 34 brute force
     public ArrayList<Integer> elementFirstAndLastPosition(){
 
