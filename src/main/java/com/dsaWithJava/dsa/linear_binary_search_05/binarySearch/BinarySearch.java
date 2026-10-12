@@ -84,6 +84,7 @@ public class BinarySearch {
         int end = ary.length - 1;
 
         while (start <= end){
+//            int mid = (start + end) / 2;  //might be possible that start + end exceed int range
             int mid = start + ( end - start) / 2;
 
             if(ary[mid] > target){

@@ -111,5 +111,9 @@ public class LogicalPrograms {
         return isArmStrong;
     }
 
+    public int secondHighestNumFromArray(){
+        return 10;
+    }
+
 
 }
